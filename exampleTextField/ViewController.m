@@ -10,6 +10,9 @@
 
 @interface ViewController ()
 
+@property (nonatomic, weak) IBOutlet UITextField *text1;
+@property (nonatomic, weak) IBOutlet UITextField *text2;
+
 @end
 
 @implementation ViewController
@@ -17,7 +20,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.text2 setFont:[UIFont systemFontOfSize:25]];
+    self.text2.placeholder = @"Password";
+    self.text2.secureTextEntry = YES;
 }
 
 - (void)didReceiveMemoryWarning
